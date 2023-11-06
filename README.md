@@ -1,4 +1,6 @@
-# Experiment-08- Encoders-and-decoders 
+# NAME: KANCHARLA NARMADHA
+# REGISTER NUMBER: 212222110016
+# Experiment 08 Encoders and decoders 
 ### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
@@ -55,42 +57,92 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
 
+Step-1:
+create module encoder and decoder.
+
+Step-2:
+Get inputs and outputs for encoders and decoders.
+
+Step-3:
+perform or operation for encoder and and logic for decoders.
+
+Step-4:
+perform RTL LOGIC and get waveform. 
+
+Step-5:
+End the module.
 
 
 ### PROGRAM 
-/*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+        Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+        Developed by: SHARAN MJ
+        RegisterNumber:  212222240097
 
+#### ENCODER
+``` VERILOG
 
-
-
-
+          module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+          input y0,y1,y2,y3,y4,y5,y6,y7;
+          output a0,a1,a2;
+          or(a0,y7,y5,y3,y1);
+          or(a1,y7,y6,y3,y2);
+          or(a2,y7,y6,y5,y4);
+          endmodule
+```
+#### DECODER
+``` VERILOG
+          module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+          input a0,a1,a2;
+          output y0,y1,y2,y3,y4,y5,y6,y7;
+          wire a0bar,a1bar,a2bar;
+          not(a0bar,a0);
+          not(a1bar,a1);
+          not(a2bar,a2);
+          and(y0,a0bar,a1bar,a2bar);
+          and(y1,a0,a1bar,a2bar);
+          and(y2,a0bar,a1,a2bar);
+          and(y3,a0,a1,a2bar);
+          and(y4,a0bar,a1bar,a2);
+          and(y5,a0,a1bar,a2);
+          and(y6,a0bar,a1,a2);
+          and(y7,a0,a1,a2);
+          endmodule
+``` 
 ### RTL LOGIC  
+#### ENCODER
+
+![Screenshot (238)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/4c06bc58-e8a0-4b14-ba96-20f8efddc801)
 
 
+#### DECODER
 
-
+![Screenshot (239)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/a0c11ef0-1625-47ba-8cb0-b5a580469fd3)
 
 
 
 
 ### TIMING DIGRAMS  
+#### ENCODER
+
+![Screenshot (234)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/2158fee9-74d3-46a3-bb92-6005be8636c6)
 
 
+
+#### DECODER
+![Screenshot (235)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/6304c066-b2b0-4e5e-a6de-fbbc6d341df2)
 
 
 
 ### TRUTH TABLE 
+#### ENCODER
+![Screenshot (236)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/e69f6084-0065-43e7-bfd5-8d261d102fb4)
 
 
-
-
+#### DECODER
+![Screenshot (237)](https://github.com/vishnupriyaramesh17/Experiment-08-Encoders-and-decoders-/assets/119393589/d289f45e-46ea-480b-a8a1-6d9f82ed023d)
 
 
 ### RESULTS 
+Thus the program to design encoder and decoder is successfully completed.
